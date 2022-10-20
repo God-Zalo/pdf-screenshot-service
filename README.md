@@ -1,3 +1,19 @@
+html-pdf service
+
+
+> npm i phantomjs
+
+> phantomjs server.js
+
+> send post request to `http://localhost:8000/ ` with any html content on body
+
+> wip
+
+
+Forked from
+==================
+
+
 screenshot-service
 ==================
 

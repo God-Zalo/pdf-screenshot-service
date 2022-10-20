@@ -1,0 +1,1001 @@
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en">           <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>onLoadFinished | PhantomJS</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="https://phantomjs.org/img/favicon.ico">
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://phantomjs.org/css/main.css">
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21665893-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <div class="masthead">
+  <div class="grid header">
+  <a href="https://phantomjs.org/" class="grid_4 alpha">
+    <img src="https://phantomjs.org/img/phantomjs-logo.png" alt="PhantomJS" width="240" height="80">
+  </a>
+  <ul class="nav-main grid_8 omega">
+    <li><a href="https://github.com/ariya/phantomjs">Source Code</a></li>
+    <li><a href="https://phantomjs.org/api">API</a></li>
+    <li><a href="https://phantomjs.org/examples">Examples</a></li>
+    <li><a href="https://phantomjs.org/faq">F.A.Q</a></li>
+  </ul>
+</div>
+</div>
+<div class="shift">
+  <div class="shift__down">
+    <div class="grid navigator">
+      <div class="grid_9 push_3">
+        <div class="post">
+          <h1>onLoadFinished</h1>
+          <p><strong>Introduced:</strong> PhantomJS 1.2</p>
+<p>This callback is invoked when the page finishes the loading. It may accept a single argument indicating the page’s <code class="language-plaintext highlighter-rouge">status</code>: <code class="language-plaintext highlighter-rouge">'success'</code> if no network errors occurred, otherwise <code class="language-plaintext highlighter-rouge">'fail'</code>.</p>
+<p>Also see <code class="language-plaintext highlighter-rouge">page.open</code> for an alternate hook for the <code class="language-plaintext highlighter-rouge">onLoadFinished</code> callback.</p>
+<h2 id="examples">Examples</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">webPage</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpage</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">webPage</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">onLoadFinished</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Status: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">status</span><span class="p">);</span>
+  <span class="c1">// Do other things here...</span>
+<span class="p">};</span>
+</code></pre></div></div>
+        </div>
+      </div>
+      <div class="grid_3 pull_9">
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="nav-up">
+    &#8810; <a href="https://phantomjs.org/api/">API</a>
+  </div>
+  <h2 class="nav-title">
+    
+      &#8810; <a href="https://phantomjs.org/api/webpage" class="nav-title">Web Page Module</a>
+    
+  </h2>
+  <ul>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/can-go-back.html" class="nav-item-name">canGoBack</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/can-go-forward.html" class="nav-item-name">canGoForward</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/clip-rect.html" class="nav-item-name">clipRect</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/content.html" class="nav-item-name">content</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/cookies.html" class="nav-item-name">cookies</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/custom-headers.html" class="nav-item-name">customHeaders</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/event.html" class="nav-item-name">event</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/focused-frame-name.html" class="nav-item-name">focusedFrameName</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/frame-content.html" class="nav-item-name">frameContent</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/frame-name.html" class="nav-item-name">frameName</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/frame-plain-text.html" class="nav-item-name">framePlainText</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/frame-title.html" class="nav-item-name">frameTitle</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/frame-url.html" class="nav-item-name">frameUrl</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/frames-count.html" class="nav-item-name">framesCount</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/frames-name.html" class="nav-item-name">framesName</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/library-path.html" class="nav-item-name">libraryPath</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/navigation-locked.html" class="nav-item-name">navigationLocked</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/offline-storage-path.html" class="nav-item-name">offlineStoragePath</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/offline-storage-quota.html" class="nav-item-name">offlineStorageQuota</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/owns-pages.html" class="nav-item-name">ownsPages</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/pages-window-name.html" class="nav-item-name">pagesWindowName</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/pages.html" class="nav-item-name">pages</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/paper-size.html" class="nav-item-name">paperSize</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/plain-text.html" class="nav-item-name">plainText</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/scroll-position.html" class="nav-item-name">scrollPosition</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/settings.html" class="nav-item-name">settings</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/title.html" class="nav-item-name">title</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/url.html" class="nav-item-name">url</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/viewport-size.html" class="nav-item-name">viewportSize</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/window-name.html" class="nav-item-name">windowName</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-property nav-group-end">
+    <span class="nav-item-label">P</span>
+    
+    <a href="https://phantomjs.org/api/webpage/property/zoom-factor.html" class="nav-item-name">zoomFactor</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/add-cookie.html" class="nav-item-name">addCookie</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/child-frames-count.html" class="nav-item-name">childFramesCount</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/child-frames-name.html" class="nav-item-name">childFramesName</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/clear-cookies.html" class="nav-item-name">clearCookies</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/close.html" class="nav-item-name">close</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/current-frame-name.html" class="nav-item-name">currentFrameName</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/delete-cookie.html" class="nav-item-name">deleteCookie</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/evaluate-async.html" class="nav-item-name">evaluateAsync</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/evaluate-java-script.html" class="nav-item-name">evaluateJavaScript</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/evaluate.html" class="nav-item-name">evaluate</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/get-page.html" class="nav-item-name">getPage</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/go-back.html" class="nav-item-name">goBack</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/go-forward.html" class="nav-item-name">goForward</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/go.html" class="nav-item-name">go</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/include-js.html" class="nav-item-name">includeJs</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/inject-js.html" class="nav-item-name">injectJs</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/open-url.html" class="nav-item-name">openUrl</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/open.html" class="nav-item-name">open</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/release.html" class="nav-item-name">release</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/reload.html" class="nav-item-name">reload</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/render-base64.html" class="nav-item-name">renderBase64</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/render-buffer.html" class="nav-item-name">renderBuffer</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/render.html" class="nav-item-name">render</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/send-event.html" class="nav-item-name">sendEvent</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/set-content.html" class="nav-item-name">setContent</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/stop.html" class="nav-item-name">stop</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/switch-to-child-frame.html" class="nav-item-name">switchToChildFrame</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/switch-to-focused-frame.html" class="nav-item-name">switchToFocusedFrame</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/switch-to-frame.html" class="nav-item-name">switchToFrame</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/switch-to-main-frame.html" class="nav-item-name">switchToMainFrame</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/switch-to-parent-frame.html" class="nav-item-name">switchToParentFrame</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-method nav-group-end">
+    <span class="nav-item-label">M</span>
+    
+    <a href="https://phantomjs.org/api/webpage/method/upload-file.html" class="nav-item-name">uploadFile</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/callback-triggers.html" class="nav-item-name">Callback Triggers</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-alert.html" class="nav-item-name">onAlert</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-callback.html" class="nav-item-name">onCallback</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-closing.html" class="nav-item-name">onClosing</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-confirm.html" class="nav-item-name">onConfirm</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-console-message.html" class="nav-item-name">onConsoleMessage</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-error.html" class="nav-item-name">onError</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-file-picker.html" class="nav-item-name">onFilePicker</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-initialized.html" class="nav-item-name">onInitialized</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler current">
+    <span class="nav-item-label">H</span>
+    
+    <span class="nav-item-name">onLoadFinished</span>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-load-started.html" class="nav-item-name">onLoadStarted</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-navigation-requested.html" class="nav-item-name">onNavigationRequested</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-page-created.html" class="nav-item-name">onPageCreated</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-prompt.html" class="nav-item-name">onPrompt</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-resource-error.html" class="nav-item-name">onResourceError</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-resource-received.html" class="nav-item-name">onResourceReceived</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-resource-requested.html" class="nav-item-name">onResourceRequested</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-resource-timeout.html" class="nav-item-name">onResourceTimeout</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="nav-item nav-item-handler nav-group-end">
+    <span class="nav-item-label">H</span>
+    
+    <a href="https://phantomjs.org/api/webpage/handler/on-url-changed.html" class="nav-item-name">onUrlChanged</a>
+    
+  </li>
+  
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="footer">
+    <div class="footer-content" class="grid">
+      <p>
+        &copy; Copyright 2010-2020 <a href="http://twitter.com/AriyaHidayat">Ariya Hidayat</a> &mdash; Homepage design by <a href="http://svay.com/">Maurice Svay</a> &mdash; Documentation design by <a href="http://twitter.com/fold_left">Jamie Mason</a>.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
